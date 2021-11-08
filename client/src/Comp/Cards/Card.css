@@ -1,0 +1,19 @@
+.card{
+    direction: rtl;
+    
+    
+}
+.b{
+
+}
+.a{
+    display: flex;
+    flex-direction: column ;
+    align-items: flex-start;
+}
+.options{
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

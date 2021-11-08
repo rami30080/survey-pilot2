@@ -1,0 +1,21 @@
+.container{
+    margin-top: 6%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+body{
+    background-color: #E2E1E1;
+}
+
+.box {
+    padding: 10%;
+    background-color: #CAC9C9;
+    border: 2px solid #9B9A9A;
+    border-radius: 3%;
+    color: #4F4F4F;
+  }
+
+  
