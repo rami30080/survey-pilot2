@@ -12,93 +12,33 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 }));
 
 
-
 //r%40m%21Ay30090
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 
-const Questions = mongoose.model('questions', {
+const Questions = mongoose.model('questions1', {
+  survey_id:Number,
+  upper_title:String,
   title: String,
-  id:Number,
   type:String,
-  options:{
-    op1: String,
-    op2: String,
-    op3: String,
-    op4: String,
-    op5: String,
-    op6: String,
-    op7: String,
-    op8: String,
-    op9: String,
-    op10: String}
 });
-const Answers = mongoose.model('answers', {
-  ans1:String,
-  ans2:String,
-  ans3:String,
-  ans4:String,
-  ans5:String,
-  ans6:String,
-  ans7:String,
-  ans8:String,
-  ans9:String,
-  ans10:String,
-  ans11:String,
-  ans12:String,
-  ans13:String,
-  ans14:String,
-  ans15:String,
-  ans16:String,
-  ans17:String,
-  ans18:String,
-  ans19:String,
-  ans20:String
+const Options = mongoose.model('options', {
+  survey_id:Number,
+  op:String,
+  type:String,
+  question_id:String,
 });
-const ans=new Answers({
-  ans1:'1',
-  ans2:'2',
-  ans3:'1',
-  ans4:'1',
-  ans5:'2',
-  ans6:'3',
-  ans7:'3',
-  ans8:'1',
-  ans9:'2',
-  ans10:'1',
-  ans11:'2',
-  ans12:'1',
-  ans13:'1',
-  ans14:'2',
-  ans15:'1',
-  ans16:'3',
-  ans17:'1',
-  ans18:'2',
-  ans19:'1',
-  ans20:'3',
-})
+
+const Answer = mongoose.model('answer', {
+  survey_id:Number,
+  answer:String,
+  question_id:String
+});
+// const ans=new Answers({
+// })
 //ans.save().then(() => console.log('meow2'));
 
-// const salah =new Questions(
-//   {
-//     title: "المستوى التعليمي:",
-//   id:23,
-//   type:"a",
-//   options:{
-//     op1: "حتى ثانوي جزئي",
-//     op2: "ثانوي كامل",
-//     op3: "فوق ثانوي غير اكاديمي",
-//     op4: null,
-//     op5: null,
-//     op6: null,
-//     op7: null,
-//     op8: null,
-//     op9: null,
-//     op10: null
-//   }
-//   });
-//   salah.save().then(() => console.log('meow2'));
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
 
